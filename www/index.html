@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Big Trekker Companion</title>
+    <link rel="icon" type="image/png" href="/icon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Skranji" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div id="firebaseui-auth-container"></div>
+<div id="form">
+<h1>Ajouter un nouveau message</h1>
+<form action="#" novalidate>
+
+    <div class="row">
+        <h2>Il faisait quel temps ?</h2>
+        <label>
+            <input name="weather" type="radio" value="Ensolleillé" checked />
+            <span>Ensolleillé</span>
+        </label>
+        <label>
+            <input name="weather" type="radio" value="Nuageux" />
+            <span>Nuageux</span>
+        </label>
+        <label>
+            <input name="weather" type="radio" value="Pluvieux" />
+            <span>Pluvieux</span>
+        </label>
+        <label>
+            <input name="weather" type="radio" value="Neigeux" />
+            <span>Neigeux</span>
+        </label>
+        <label>
+            <input name="weather" type="radio" value="Venteux" />
+            <span>Venteux</span>
+        </label>
+        <label>
+            <input name="weather" type="radio" value="Tempête" />
+            <span>Tempête</span>
+        </label>
+    </div>
+
+    <div class="row">
+        <h2>C'était pour ?</h2>
+        <label>
+            <input name="break" type="radio" value="Début de journée" checked />
+            <span>Début de journée</span>
+        </label>
+        <label>
+            <input name="break" type="radio" value="Fin de journée" />
+            <span>Fin de journée</span>
+        </label>
+        <label>
+            <input name="break" type="radio" value="Pause repas" />
+            <span>Pause repas</span>
+        </label>
+        <label>
+            <input name="break" type="radio" value="A l'auberge" />
+            <span>A l'auberge</span>
+        </label>
+        <label>
+            <input name="break" type="radio" value="Petite pause" />
+            <span>Petite pause</span>
+        </label>
+    </div>
+
+    <div class="row">
+        <h2>C'était quand ?</h2>
+        <div class="input-field col s3">
+            <input type="text" class="datepicker" name="date" id="datepicker">
+        </div>
+    </div>
+
+    <div class="row">
+        <h2>C'était bien ?</h2>
+        <div class="input-field col s4">
+          <textarea id="message" name="message" class="materialize-textarea" placeholder="Dis nous tout"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2>Par ici les photos!</h2>
+        <div class="file-field input-field col s4">
+          <div class="btn">
+            <span>Choisir</span>
+            <input type="file" name="photos" multiple>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Choisis une ou plusieurs photos">
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <button class="btn waves-effect waves-light" id="submit" onclick="event.preventDefault();readyToGo()">
+            C'est tout bon ?
+            <i class="material-icons right">send</i>
+        </button>
+    </div>
+</form>
+</div>
+
+<!-- Modal -->
+<div id="confirm-modal" class="modal">
+    <div class="modal-content">
+      <h4>Une dernière verif ?</h4>
+      <p>
+          Météo: <span id="modal-meteo"></span><br>
+          Type: <span id="modal-type"></span><br>
+          Date: <span id="modal-date"></span><br>
+          Message: <span id="modal-message"></span><br>
+          Photos: <span id="modal-photos"></span><br>
+      </p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-close waves-effect waves-green btn-flat">RETOUR</a>
+        <button onclick="publish()" class="btn waves-effect waves-green">OK</button>
+    </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/2.7.0/firebase-ui-auth__fr.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>

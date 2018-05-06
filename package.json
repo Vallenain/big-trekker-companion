@@ -1,0 +1,22 @@
+{
+  "name": "big-trekker-companion",
+  "version": "1.0.0",
+  "description": "Very basic app to add new entry in the firebase database used by the big-trekker repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vallenain/big-trekker-companion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vallenain/big-trekker-companion/issues"
+  },
+  "homepage": "https://github.com/Vallenain/big-trekker-companion#readme",
+  "devDependencies": {
+    "simplehttpserver": "^0.1.1"
+  }
+}
